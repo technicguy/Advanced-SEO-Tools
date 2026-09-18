@@ -1,0 +1,157 @@
+```
+/                                  # Root directory
+├── index.php                      # Main entry point and landing page
+├── login.php                      # User login page
+├── register.php                   # User registration page
+├── forgot-password.php            # Password recovery request page
+├── reset-password.php             # Password reset page
+├── dashboard.php                  # User dashboard 
+├── logout.php                     # Logout handler
+├── sitemap-generator.php          # HTML Sitemap generator utility
+├── robots.txt                     # Robots.txt file
+├── favicon.ico                    # Favicon
+├── .htaccess                      # Apache configuration
+│
+├── config/                        # Configuration files
+│   ├── config.php                 # Core configuration (DB, constants)
+│   ├── database.php               # Database connection setup
+│   └── init.php                   # Application initialization file
+│
+├── includes/                      # Core classes and utilities
+│   ├── Auth.php                   # Authentication class
+│   ├── User.php                   # User management class
+│   ├── ApiCache.php               # API caching class
+│   ├── SeoAnalyzer.php            # Core analysis controller
+│   ├── Report.php                 # Report generator class
+│   ├── Utilities.php              # Common utility functions
+│   ├── SitemapGenerator.php       # Sitemap generator class
+│   └── Logger.php                 # Logging functionality
+│
+├── api/                           # API endpoints
+│   ├── content-analysis-api.php   # Content analysis API
+│   ├── generate-ai-recommendations-api.php # AI recommendations API
+│   ├── get-ai-models-api.php      # Get available AI models
+│   ├── get-domains-api.php        # Get user's domains
+│   ├── get-results-api.php        # Get analysis results
+│   ├── keyword-analysis-api.php   # Keyword analysis API
+│   ├── login-api.php              # User login API
+│   ├── logout-api.php             # User logout API
+│   ├── offpage-seo-api.php        # Off-page SEO analysis API
+│   ├── onpage-seo-api.php         # On-page SEO analysis API
+│   ├── register-api.php           # User registration API
+│   ├── save-results-api.php       # Save analysis results
+│   ├── technical-seo-api.php      # Technical SEO analysis API
+│   ├── user-profile-api.php       # User profile management API
+│   └── user-settings-api.php      # User settings management API
+│
+├── js/                            # JavaScript files
+│   ├── ai-recommendations.js      # AI recommendations functionality
+│   ├── analysis-manager.js        # Analysis workflow management
+│   ├── api-service.js             # API communication service
+│   ├── auth.js                    # Authentication functions
+│   ├── content-analysis.js        # Content analysis display
+│   ├── dashboard.js               # Dashboard functionality
+│   ├── domain-manager.js          # Domain management
+│   ├── export-manager.js          # Export functionality
+│   ├── keyword-analysis.js        # Keyword analysis display
+│   ├── main.js                    # Main application entry point
+│   ├── offpage-seo.js             # Off-page SEO display
+│   ├── onpage-seo.js              # On-page SEO display
+│   ├── technical-seo.js           # Technical SEO display
+│   ├── ui-manager.js              # UI updates and interactions
+│   ├── user-profile.js            # User profile management
+│   ├── utils.js                   # Utility functions
+│   └── visualization.js           # Data visualization
+│
+├── css/                           # CSS stylesheets
+│   ├── style.css                  # Main stylesheet
+│   ├── dashboard.css              # Dashboard styles
+│   ├── auth.css                   # Authentication pages styles
+│   ├── reports.css                # Report styles
+│   └── responsive.css             # Responsive design styles
+│
+├── img/                           # Image assets
+│   ├── logo.png                   # Site logo
+│   ├── logo-dark.png              # Dark mode logo
+│   ├── icons/                     # Icon assets
+│   └── backgrounds/               # Background images
+│
+├── templates/                     # Template files
+│   ├── header.php                 # Header template
+│   ├── footer.php                 # Footer template
+│   ├── sidebar.php                # Sidebar template
+│   ├── navbar.php                 # Navigation bar template
+│   ├── analysis-form.php          # Analysis form template
+│   ├── results/                   # Result templates
+│   │   ├── technical.php          # Technical SEO results
+│   │   ├── onpage.php             # On-page SEO results
+│   │   ├── offpage.php            # Off-page SEO results
+│   │   ├── keywords.php           # Keyword results
+│   │   ├── content.php            # Content analysis results
+│   │   └── ai-recommendations.php # AI recommendations
+│   ├── user/                      # User-related templates
+│   │   ├── login-form.php         # Login form
+│   │   ├── register-form.php      # Registration form
+│   │   ├── profile-form.php       # Profile edit form
+│   │   └── password-form.php      # Password change form
+│   └── error/                     # Error templates
+│       ├── 404.php                # Not found error
+│       ├── 403.php                # Forbidden error
+│       └── generic.php            # Generic error
+│
+├── admin/                         # Admin section
+│   ├── index.php                  # Admin dashboard
+│   ├── users.php                  # User management
+│   ├── settings.php               # System settings
+│   ├── ai-models.php              # AI model management
+│   ├── logs.php                   # System logs
+│   ├── maintenance.php            # Maintenance tools
+│   └── js/                        # Admin JavaScript
+│       ├── admin.js               # Admin functionality
+│       └── user-management.js     # User management functions
+│
+├── dashboard/                     # Dashboard views
+│   ├── index.php                  # Main dashboard view
+│   ├── analyses.php               # User's analyses
+│   ├── domains.php                # User's domains
+│   ├── reports.php                # Generated reports
+│   ├── profile.php                # User profile
+│   ├── settings.php               # User settings
+│   └── tools/                     # Additional tools
+│       ├── sitemap.php            # Sitemap generator
+│       ├── keyword-research.php   # Keyword research tool
+│       └── bulk-analysis.php      # Bulk analysis tool
+│
+├── setup/                         # Setup scripts
+│   ├── install.php                # Installation script
+│   ├── setup-ai-tables.php        # AI tables setup
+│   ├── setup-user-tables.php      # User tables setup
+│   └── sample-data.php            # Sample data generator
+│
+├── cache/                         # Cache directory
+│   └── .htaccess                  # Prevent direct access
+│
+├── backups/                       # Database backups
+│   └── .htaccess                  # Prevent direct access
+│
+├── logs/                          # Log files
+│   └── .htaccess                  # Prevent direct access
+│
+├── docs/                          # Documentation
+│   ├── api.md                     # API documentation
+│   ├── setup.md                   # Setup instructions
+│   └── user-guide.md              # User guide
+│
+├── vendor/                        # Third-party libraries (if using Composer)
+│
+├── tests/                         # Test scripts
+│   ├── api-tests.php              # API endpoint tests
+│   └── unit-tests.php             # Unit tests
+│
+├── cron/                          # Cron job scripts
+│   ├── db-maintenance.php         # Database maintenance
+│   ├── clear-cache.php            # Cache cleanup
+│   └── backup.php                 # Automated backup
+│
+└── README.md                      # Project readme
+```

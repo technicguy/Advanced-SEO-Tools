@@ -1,0 +1,59 @@
+/* 
+ * image-analysis.css - Styles for image analysis component
+ */
+
+/* Score gauge styling */
+.score-gauge {
+    position: relative;
+    display: inline-block;
+}
+
+.score-value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Progress stats styling */
+.progress-stats .stat-item {
+    margin-bottom: 12px;
+}
+
+/* Recommendation styling */
+.recommendation-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.recommendation-item:last-child {
+    border-bottom: none;
+}
+
+/* Image details styling */
+.image-thumbnail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-path {
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin-top: 5px;
+    text-align: center;
+}
+
+/* Chart containers */
+.score-breakdown-chart-container,
+.format-distribution-chart-container {
+    height: 250px;
+}
+
+/* Badge styling in image details table */
+.badge {
+    display: inline-block;
+    font-size: 0.75rem;
+}

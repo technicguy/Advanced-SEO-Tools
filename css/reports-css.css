@@ -1,0 +1,337 @@
+/**
+ * Reports Stylesheet for SEO Analysis Tool
+ * This stylesheet is specifically for exported reports and printable content
+ */
+
+/* Print-specific styles */
+@media print {
+  /* Hide elements not needed for print */
+  .no-print, .no-print * {
+    display: none !important;
+  }
+  
+  /* Ensure background colors and images print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  /* Remove page margins and add page breaks between sections */
+  @page {
+    margin: 0.5cm;
+  }
+  
+  .page-break {
+    page-break-before: always;
+  }
+  
+  /* Adjust font sizes for print */
+  body {
+    font-size: 12pt;
+  }
+  
+  h1 {
+    font-size: 18pt;
+  }
+  
+  h2 {
+    font-size: 16pt;
+  }
+  
+  h3 {
+    font-size: 14pt;
+  }
+  
+  /* Format tables for printing */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    padding: 8pt;
+    text-align: left;
+    border: 1pt solid #ddd;
+  }
+  
+  /* Ensure charts and graphs print properly */
+  .chart-container {
+    margin-bottom: 20pt;
+    page-break-inside: avoid;
+  }
+  
+  /* Ensure recommendations print well */
+  .recommendation-item {
+    page-break-inside: avoid;
+    margin-bottom: 10pt;
+  }
+}
+
+/* Report container styles */
+.report-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Report header styles */
+.report-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.report-logo {
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.report-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.report-subtitle {
+  font-size: 18px;
+  color: #666;
+}
+
+.report-date {
+  font-size: 14px;
+  color: #888;
+  margin-top: 10px;
+}
+
+/* Report summary styles */
+.report-summary {
+  background-color: #f7f9ff;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  border-left: 4px solid #4e73df;
+}
+
+.report-summary-title {
+  font-size: 18px;
+  color: #4e73df;
+  margin-bottom: 10px;
+}
+
+/* Report section styles */
+.report-section {
+  margin-bottom: 40px;
+}
+
+.report-section-title {
+  font-size: 20px;
+  color: #333;
+  border-bottom: 2px solid #4e73df;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* Statistics card styles */
+.stat-card {
+  background-color: white;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+}
+
+.stat-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-right: 15px;
+  color: white;
+}
+
+.stat-icon-technical {
+  background-color: #4e73df;
+}
+
+.stat-icon-onpage {
+  background-color: #1cc88a;
+}
+
+.stat-icon-offpage {
+  background-color: #36b9cc;
+}
+
+.stat-icon-keywords {
+  background-color: #f6c23e;
+}
+
+.stat-icon-content {
+  background-color: #e74a3b;
+}
+
+.stat-details {
+  flex-grow: 1;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Table styles */
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+.report-table th {
+  background-color: #f8f9fc;
+  color: #5a5c69;
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 2px solid #e3e6f0;
+}
+
+.report-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e3e6f0;
+}
+
+.report-table tr:nth-child(even) {
+  background-color: #f8f9fc;
+}
+
+.report-table tr:hover {
+  background-color: #f1f3f9;
+}
+
+/* Score indicator styles */
+.score-indicator {
+  height: 8px;
+  background-color: #e3e6f0;
+  border-radius: 4px;
+  margin-top: 5px;
+  overflow: hidden;
+}
+
+.score-bar {
+  height: 100%;
+  border-radius: 4px;
+}
+
+.score-excellent {
+  background-color: #1cc88a;
+}
+
+.score-good {
+  background-color: #4e73df;
+}
+
+.score-fair {
+  background-color: #f6c23e;
+}
+
+.score-poor {
+  background-color: #e74a3b;
+}
+
+/* Recommendation item styles */
+.recommendation-item {
+  border-left: 4px solid #4e73df;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f8f9fc;
+  border-radius: 0 5px 5px 0;
+}
+
+.recommendation-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recommendation-importance {
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 3px;
+  color: white;
+}
+
+.importance-high {
+  background-color: #e74a3b;
+}
+
+.importance-medium {
+  background-color: #f6c23e;
+}
+
+.importance-low {
+  background-color: #1cc88a;
+}
+
+.recommendation-content {
+  margin-bottom: 10px;
+}
+
+.recommendation-implementation {
+  background-color: #e8eeff;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Footer styles */
+.report-footer {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  color: #888;
+  font-size: 14px;
+}
+
+/* Chart containers */
+.chart-container {
+  height: 300px;
+  margin-bottom: 30px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .report-container {
+    padding: 15px;
+  }
+  
+  .stat-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .stat-icon {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  
+  .report-table {
+    display: block;
+    overflow-x: auto;
+  }
+}

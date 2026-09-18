@@ -1,0 +1,127 @@
+/                                  # Root directory
+├── index.php                      # Main entry point and landing page
+├── config.php                     # Core configuration (DB, constants)
+├── .htaccess                      # Apache configuration
+
+├── includes/                      # Core classes and utilities
+│   ├── api-caching.php            # API response caching (ENHANCED)
+│   ├── batch-processor.php        # NEW: Batch processing for large sites
+│   ├── rate-limiter.php           # NEW: API rate limiting functionality
+│   ├── broken-link-checker.php    # Broken link detection
+│   ├── schema-generator.php       # Schema markup generator
+│   ├── sitemap-generator.php      # Sitemap generator
+│   ├── page-analyzer.php          # Page structure analyzer
+│   ├── image-analyzer.php         # Image optimization analyzer (ENHANCED)
+│   ├── meta-analyzer.php          # Meta tags analyzer
+│   ├── link-analyzer.php          # Link structure analyzer
+│   ├── performance-analyzer.php   # Web performance analyzer
+│   ├── competitive-analyzer.php   # Competitor analysis
+│   └── data-pruner.php            # NEW: Database maintenance utility
+
+├── api/                           # API endpoints
+│   ├── content-analysis-api.php   # Content analysis API
+│   ├── generate-ai-recommendations-api.php # AI recommendations API (ENHANCED)
+│   ├── compare-ai-models-api.php  # NEW: Compare multiple AI models
+│   ├── get-ai-models-api.php      # Get available AI models
+│   ├── get-domains-api.php        # Get user's domains
+│   ├── get-results-api.php        # Get analysis results
+│   ├── keyword-analysis-api.php   # Keyword analysis API
+│   ├── offpage-seo-api.php        # Off-page SEO analysis API
+│   ├── onpage-seo-api.php         # On-page SEO analysis API
+│   ├── save-results-api.php       # Save analysis results (ENHANCED)
+│   ├── schedule-analysis-api.php  # NEW: Schedule recurring analyses
+│   ├── technical-seo-api.php      # Technical SEO analysis API
+│   ├── meta-tags-api.php          # Meta tags analysis API
+│   ├── link-analysis-api.php      # Link analysis API
+│   ├── image-analysis-api.php     # Image analysis API
+│   ├── page-structure-api.php     # Page structure API
+│   ├── performance-api.php        # Core Web Vitals API
+│   ├── schema-analysis-api.php    # Schema markup analysis API
+│   ├── competitor-analysis-api.php # Competitor analysis API
+│   └── export-report-api.php      # NEW: Enhanced export functionality
+
+├── js/                            # JavaScript files
+│   ├── ai-recommendations.js      # AI recommendations functionality (ENHANCED)
+│   ├── ai-recommendation-templates.js # NEW: Customizable AI prompt templates
+│   ├── analysis-manager.js        # Analysis workflow management (ENHANCED)
+│   ├── api-service.js             # API communication service (ENHANCED)
+│   ├── content-analysis.js        # Content analysis display
+│   ├── domain-manager.js          # Domain management
+│   ├── export-manager.js          # Export functionality (ENHANCED)
+│   ├── keyword-analysis.js        # Keyword analysis display
+│   ├── main.js                    # Main application entry point
+│   ├── offpage-seo.js             # Off-page SEO display
+│   ├── onpage-seo.js              # On-page SEO display
+│   ├── technical-seo.js           # Technical SEO display
+│   ├── ui-manager.js              # UI updates and interactions (ENHANCED)
+│   ├── utils.js                   # Utility functions (ENHANCED)
+│   ├── visualization.js           # Data visualization (ENHANCED)
+│   ├── progressive-loader.js      # NEW: Progressive content loading
+│   ├── implementation-tracker.js  # NEW: Track recommendation implementations
+│   ├── recommendation-filter.js   # NEW: Filter and prioritize recommendations
+│   ├── meta-tags-analysis.js      # Meta tags analysis display
+│   ├── link-analysis.js           # Link analysis display
+│   ├── image-analysis.js          # Image analysis display
+│   ├── page-structure.js          # Page structure display
+│   ├── performance-metrics.js     # Web performance display
+│   ├── schema-analysis.js         # Schema markup analysis display
+│   ├── competitor-analysis.js     # Competitor analysis display
+│   ├── trend-analyzer.js          # NEW: Historical data trends visualization
+│   └── responsive-charts.js       # NEW: Mobile-optimized charts
+
+├── css/                           # CSS stylesheets
+│   ├── style.css                  # Main stylesheet (ENHANCED)
+│   ├── mobile-optimizations.css   # NEW: Mobile-specific styles
+│   ├── reports.css                # Report styling
+│   ├── advanced-visualization.css # Enhanced data visualization styles
+│   ├── recommendation-cards.css   # NEW: Enhanced recommendation display
+│   └── animations.css             # NEW: UI transitions and animations
+
+├── templates/                     # HTML templates
+│   ├── reports/                   # Report templates
+│   │   ├── technical-report.html  # Technical SEO report template
+│   │   ├── onpage-report.html     # On-page SEO report template
+│   │   ├── full-analysis.html     # Complete SEO report template
+│   │   └── executive-summary.html # NEW: Condensed report for clients
+│   └── widgets/                   # Reusable UI components
+│       ├── score-gauge.html       # Score gauge widget
+│       ├── recommendation-card.html # Recommendation card (ENHANCED)
+│       ├── comparison-table.html  # Comparison table
+│       ├── progress-indicator.html # NEW: Enhanced progress display
+│       ├── implementation-status.html # NEW: Track recommendation status
+│       └── quick-filter.html      # NEW: UI for filtering recommendations
+
+├── workers/                       # NEW: Background processing
+│   ├── queue-manager.php          # NEW: Manage async analysis queue
+│   ├── batch-analyzer.php         # NEW: Process analysis in batches
+│   ├── scheduled-audits.php       # NEW: Run scheduled analyses
+│   └── notification-sender.php    # NEW: Send analysis completion notifications
+
+├── setting/                       # Admin section
+│   ├── index.php                  # Admin dashboard
+│   ├── settings.php               # System settings
+│   ├── ai-model-management.php    # AI Model management (ENHANCED)
+│   ├── ai-prompt-templates.php    # NEW: Customize AI prompt templates
+│   ├── ai-model-tester.php        # AI Model testing
+│   ├── maintenance.php            # Maintenance tools
+│   ├── db-maintenance.php         # Database maintenance
+│   ├── performance-settings.php   # NEW: Performance optimization controls
+│   ├── clear-cache.php            # Cache cleanup
+│   ├── backup.php                 # Automated backup
+│   ├── user-management.php        # User management
+│   ├── api-key-management.php     # API key management
+│   ├── custom-analysis.php        # Custom analysis configuration
+│   └── scheduled-audits.php       # Scheduled audits configuration
+
+├── cache/                         # Cache directory
+│   ├── api/                       # NEW: API response cache
+│   ├── images/                    # NEW: Image analysis cache
+│   └── .htaccess                  # Prevent direct access
+
+├── backups/                       # Database backups
+│   └── .htaccess                  # Prevent direct access
+
+├── logs/                          # Log files
+│   ├── performance/               # NEW: Performance logs
+│   ├── api/                       # NEW: API access logs
+│   └── .htaccess                  # Prevent direct access

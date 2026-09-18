@@ -1,0 +1,90 @@
+/* content-gap.css - Styles for content gap analysis display */
+
+/* Main container */
+.content-gap-results {
+    margin-bottom: 2rem;
+}
+
+/* Gauge styling */
+.gauge-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+.gauge-container .score-value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Metrics styling */
+.content-gap-metric h6 {
+    margin-bottom: 0.25rem;
+    color: #6c757d;
+}
+
+.content-gap-metric .h2 {
+    color: #343a40;
+    font-weight: 600;
+}
+
+/* Missing topics and keyword gaps tables */
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.05);
+    cursor: pointer;
+}
+
+/* Topic distribution chart container */
+.chart-container {
+    position: relative;
+    margin: auto;
+    width: 100%;
+}
+
+/* Implementation guide styling */
+.implementation-guide {
+    background-color: #f8f9fa;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+}
+
+/* Topics legend styling */
+.topics-legend h6 {
+    color: #343a40;
+    font-weight: 600;
+}
+
+.topics-covered, .topics-missing {
+    margin-bottom: 1rem;
+}
+
+/* Recommendations cards */
+.content-gap-recommendations .card {
+    transition: transform 0.2s;
+}
+
+.content-gap-recommendations .card:hover {
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .gauge-container {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .gauge-container .score-value {
+        font-size: 1.5rem;
+    }
+    
+    .chart-container {
+        height: 250px !important;
+    }
+}

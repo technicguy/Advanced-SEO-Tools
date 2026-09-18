@@ -1,0 +1,173 @@
+/* AI Recommendations Styles */
+.ai-recommendations-container {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Executive Summary Section */
+.ai-recommendations-container .bg-light {
+    background-color: #f8f9fa !important;
+}
+
+.ai-recommendations-container .lead {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #495057;
+}
+
+/* Recommendation Cards */
+.recommendation-card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.recommendation-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+}
+
+.category-indicator {
+    min-height: 100%;
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 1.5rem 0.75rem;
+    position: relative;
+}
+
+.category-indicator.bg-secondary {
+    background-color: #6c757d !important;
+}
+
+.category-indicator.bg-info {
+    background-color: #0dcaf0 !important;
+}
+
+.category-indicator.bg-success {
+    background-color: #198754 !important;
+}
+
+.category-indicator.bg-warning {
+    background-color: #ffc107 !important;
+}
+
+.category-indicator:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 10px;
+    background: linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,0));
+}
+
+.implementation-section {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+/* Badges */
+.badge.bg-danger {
+    background-color: #dc3545 !important;
+}
+
+.badge.bg-warning {
+    background-color: #ffc107 !important;
+    color: #212529 !important;
+}
+
+.badge.bg-info {
+    background-color: #0dcaf0 !important;
+    color: #212529 !important;
+}
+
+.badge.bg-primary {
+    background-color: #0d6efd !important;
+}
+
+/* Next Steps and Resources */
+.next-steps-list li {
+    padding: 0.5rem 0;
+    line-height: 1.5;
+}
+
+.resource-item {
+    transition: background-color 0.2s ease;
+    border-radius: 5px;
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.resource-item:hover {
+    background-color: #e9ecef !important;
+}
+
+.resource-item a {
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+.resource-item a:hover {
+    text-decoration: underline;
+}
+
+/* High, Medium, Low Priority Indicators */
+.border-danger {
+    border-color: #dc3545 !important;
+}
+
+.border-warning {
+    border-color: #ffc107 !important;
+}
+
+.border-info {
+    border-color: #0dcaf0 !important;
+}
+
+/* Action Buttons */
+.btn-outline-secondary {
+    color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-outline-secondary:hover {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-outline-success {
+    color: #198754;
+    border-color: #198754;
+}
+
+.btn-outline-success:hover {
+    color: #fff;
+    background-color: #198754;
+    border-color: #198754;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #198754;
+    border-color: #198754;
+}
+
+/* Animation for Copy and Implement buttons */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.copy-rec-btn, .implement-rec-btn {
+    transition: all 0.2s ease;
+}
+
+.copy-rec-btn:active, .implement-rec-btn:active {
+    transform: scale(0.95);
+}

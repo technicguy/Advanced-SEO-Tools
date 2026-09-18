@@ -1,0 +1,200 @@
+CREATE TABLE IF NOT EXISTS `ai_models` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `description` text,
+  `type` enum('online','local') NOT NULL DEFAULT 'online',
+  `api_url` varchar(255) DEFAULT NULL,
+  `api_key` varchar(255) DEFAULT NULL,
+  `model_name` varchar(100) DEFAULT NULL,
+  `status` enum('active','inactive') NOT NULL DEFAULT 'active',
+  `is_default` tinyint(2) DEFAULT '0',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) 
+CREATE TABLE IF NOT EXISTS `settings` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `category` varchar(50) NOT NULL COMMENT 'Setting category (general, api, seo, ai, cache, email)',
+  `key` varchar(100) NOT NULL COMMENT 'Setting identifier',
+  `value` text COMMENT 'Setting value',
+  `data_type` enum('string','integer','float','boolean','json') NOT NULL DEFAULT 'string' COMMENT 'Type of data stored',
+  `description` text COMMENT 'Setting description',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `unique_setting` (`category`,`key`)
+) 
+
+
+
+
+CREATE TABLE IF NOT EXISTS `websites` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `domain_name` varchar(255) NOT NULL,
+  `url` varchar(255) NOT NULL,
+  `date_added` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `last_checked` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `url` (`url`)
+)
+
+
+
+
+CREATE TABLE IF NOT EXISTS `ai_recommendations` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `website_id` int(11) NOT NULL,
+  `ai_model_id` int(11) NOT NULL,
+  `summary` text,
+  `recommendations_json` longtext,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `website_id` (`website_id`),
+  KEY `ai_model_id` (`ai_model_id`)
+) 
+CREATE TABLE IF NOT EXISTS `competitive_analysis` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `website_id` int(11) NOT NULL,
+  `competitor_url` varchar(255) NOT NULL,
+  `comparison_data_json` longtext,
+  `scan_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `website_id` (`website_id`)
+)
+CREATE TABLE IF NOT EXISTS `content_analysis` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `website_id` int(11) NOT NULL,
+  `page_url` varchar(255) NOT NULL,
+  `keyword_density` float DEFAULT NULL,
+  `readability_score` int(11) DEFAULT NULL,
+  `content_length` int(11) DEFAULT NULL,
+  `scan_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `website_id` (`website_id`)
+)
+CREATE TABLE IF NOT EXISTS `core_web_vitals` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `website_id` int(11) NOT NULL,
+  `page_url` varchar(255) NOT NULL,
+  `lcp` float DEFAULT NULL,
+  `fid` float DEFAULT NULL,
+  `cls` float DEFAULT NULL,
+  `fcp` float DEFAULT NULL,
+  `ttfb` float DEFAULT NULL,
+  `tti` float DEFAULT NULL,
+  `performance_score` int(11) DEFAULT NULL,
+  `scan_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `website_id` (`website_id`)
+) 
+CREATE TABLE IF NOT EXISTS `image_analysis` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `website_id` int(11) NOT NULL,
+  `page_url` varchar(255) NOT NULL,
+  `total_images` int(11) DEFAULT NULL,
+  `images_with_alt` int(11) DEFAULT NULL,
+  `images_without_alt` int(11) DEFAULT NULL,
+  `oversized_images` int(11) DEFAULT NULL,
+  `lazy_loaded_images` int(11) DEFAULT NULL,
+  `image_details_json` longtext,
+  `scan_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `website_id` (`website_id`)
+) 
+CREATE TABLE IF NOT EXISTS `keyword_analysis` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `website_id` int(11) NOT NULL,
+  `keyword` varchar(255) NOT NULL,
+  `search_volume` int(11) DEFAULT NULL,
+  `keyword_difficulty` int(11) DEFAULT NULL,
+  `current_ranking` int(11) DEFAULT NULL,
+  `scan_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `website_id` (`website_id`)
+) 
+CREATE TABLE IF NOT EXISTS `link_analysis` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `website_id` int(11) NOT NULL,
+  `page_url` varchar(255) NOT NULL,
+  `total_links` int(11) DEFAULT NULL,
+  `internal_links` int(11) DEFAULT NULL,
+  `external_links` int(11) DEFAULT NULL,
+  `broken_links` int(11) DEFAULT NULL,
+  `nofollow_links` int(11) DEFAULT NULL,
+  `links_details_json` longtext,
+  `scan_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `website_id` (`website_id`)
+) 
+CREATE TABLE IF NOT EXISTS `meta_tags_analysis` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `website_id` int(11) NOT NULL,
+  `page_url` varchar(255) NOT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `title_length` int(11) DEFAULT NULL,
+  `meta_description` text,
+  `meta_description_length` int(11) DEFAULT NULL,
+  `meta_keywords` text,
+  `has_viewport` tinyint(1) DEFAULT NULL,
+  `has_robots` tinyint(1) DEFAULT NULL,
+  `has_canonical` tinyint(1) DEFAULT NULL,
+  `has_og_tags` tinyint(1) DEFAULT NULL,
+  `has_twitter_cards` tinyint(1) DEFAULT NULL,
+  `scan_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `website_id` (`website_id`)
+) 
+CREATE TABLE IF NOT EXISTS `offpage_seo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `website_id` int(11) NOT NULL,
+  `backlink_score` int(11) DEFAULT NULL,
+  `domain_authority` int(11) DEFAULT NULL,
+  `social_media_score` int(11) DEFAULT NULL,
+  `toxic_backlinks` int(11) DEFAULT NULL,
+  `scan_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `website_id` (`website_id`)
+) 
+CREATE TABLE IF NOT EXISTS `onpage_seo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `website_id` int(11) NOT NULL,
+  `title_tags_score` int(11) DEFAULT NULL,
+  `meta_desc_score` int(11) DEFAULT NULL,
+  `header_tags_score` int(11) DEFAULT NULL,
+  `content_score` int(11) DEFAULT NULL,
+  `image_optimization_score` int(11) DEFAULT NULL,
+  `internal_linking_score` int(11) DEFAULT NULL,
+  `url_structure_score` int(11) DEFAULT NULL,
+  `scan_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `website_id` (`website_id`)
+) 
+CREATE TABLE IF NOT EXISTS `page_structure` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `website_id` int(11) NOT NULL,
+  `page_url` varchar(255) NOT NULL,
+  `has_h1` tinyint(1) DEFAULT NULL,
+  `heading_structure_json` longtext,
+  `content_html_ratio` float DEFAULT NULL,
+  `main_content_word_count` int(11) DEFAULT NULL,
+  `has_schema_markup` tinyint(1) DEFAULT NULL,
+  `schema_types_json` text,
+  `scan_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `website_id` (`website_id`)
+)
+
+CREATE TABLE IF NOT EXISTS `technical_seo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `website_id` int(11) NOT NULL,
+  `crawlability_score` int(11) DEFAULT NULL,
+  `indexability_score` int(11) DEFAULT NULL,
+  `site_speed_score` int(11) DEFAULT NULL,
+  `mobile_friendly_score` int(11) DEFAULT NULL,
+  `schema_markup_valid` tinyint(1) DEFAULT NULL,
+  `has_ssl` tinyint(1) DEFAULT NULL,
+  `internationalization_score` int(11) DEFAULT NULL,
+  `scan_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `website_id` (`website_id`)
+)

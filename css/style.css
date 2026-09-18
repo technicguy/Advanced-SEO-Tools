@@ -1,0 +1,796 @@
+/* Main styles for SEO Tools App */
+
+/* Layout and General Styles */
+html, body {
+    height: 100%;
+}
+
+body {
+    padding-top: 0; /* Remove default padding for fixed navbar */
+}
+
+main {
+    padding-left: 0; /* Ensure content doesn't overlap with sidebar */
+}
+
+@media (min-width: 768px) {
+    .col-md-9.ms-sm-auto.col-lg-10.px-md-4 {
+        margin-left: 16.666667%; /* Properly align main content to not overlap with sidebar */
+    }
+}
+
+/* Sidebar styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    padding: 48px 0 0;
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+    overflow-y: auto;
+}
+
+.sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.sidebar .nav-link {
+    font-weight: 500;
+    color: #333;
+    padding: .75rem 1rem;
+    border-left: 3px solid transparent;
+}
+
+.sidebar .nav-link:hover {
+    background-color: rgba(0, 0, 0, .05);
+    border-left: 3px solid #007bff;
+}
+
+.sidebar .nav-link.active {
+    color: #007bff;
+    background-color: rgba(0, 123, 255, .1);
+    border-left: 3px solid #007bff;
+}
+
+/* Domain list styles */
+#domainsList .nav-link {
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+#domainsList .nav-link:hover {
+    background-color: #e9ecef;
+}
+
+#domainsList .nav-link.active {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Domain search styles */
+#domainSearchInput {
+    font-size: 0.875rem;
+}
+
+#clearDomainSearch {
+    border-color: #ced4da;
+}
+
+#clearDomainSearch:hover {
+    background-color: #f8f9fa;
+}
+
+#noDomainsFound {
+    font-style: italic;
+    font-size: 0.875rem;
+}
+
+/* Progress tracking styles */
+#progressSteps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.step-item {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #dee2e6;
+    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 200px;
+	cursor: pointer;
+}.step-item:hover {
+    background-color: #e9ecef;
+    transform: translateY(-2px);
+}
+
+.step-icon {
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step-text {
+    flex-grow: 1;
+    font-weight: 500;
+}
+
+.step-status {
+    margin-left: 10px;
+}
+
+.step-item.in-progress {
+    background-color: #fff8e6;
+    border-color: #ffc107;
+    box-shadow: 0 0 5px rgba(255, 193, 7, 0.3);
+}
+
+.step-item.completed {
+    background-color: #e7f7ed;
+    border-color: #28a745;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.3);
+}
+
+.step-item.failed {
+    background-color: #fff2f2;
+    border-color: #dc3545;
+    box-shadow: 0 0 5px rgba(220, 53, 69, 0.3);
+}
+
+/* Card and Section Styles */
+.card {
+    border: none;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08) !important;
+}
+
+.card-header {
+    border-bottom: none;
+    padding: 1rem 1.25rem;
+}
+
+.results-card {
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.results-card .card-header {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+/* Accordion Styles */
+.accordion-item {
+    border: none;
+    margin-bottom: 0.5rem;
+    border-radius: 8px !important;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.accordion-button {
+    padding: 1rem 1.25rem;
+    font-weight: 600;
+    box-shadow: none !important;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: rgba(13, 110, 253, 0.05);
+    color: #0d6efd;
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230d6efd'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+/* Score and Metric Styles */
+.score-gauge {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+}
+
+.score-value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.score-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.score-label {
+    flex-grow: 1;
+}
+
+.score-badge {
+    width: 50px;
+    text-align: center;
+}
+
+.badge.rounded-pill {
+    font-size: 0.85rem;
+    padding: 0.35em 0.85em;
+    font-weight: 600;
+}
+
+/* Score color classes */
+.score-good {
+    color: #28a745;
+}
+
+.score-average {
+    color: #ffc107;
+}
+
+.score-poor {
+    color: #dc3545;
+}
+
+/* Status items styling */
+.status-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.status-item:hover {
+    background-color: rgba(0,0,0,0.02);
+}
+
+.status-item-icon {
+    margin-right: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.status-item-content {
+    flex: 1;
+}
+
+.status-item-title {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.status-good {
+    background-color: rgba(40, 167, 69, 0.05);
+}
+
+.status-warning {
+    background-color: rgba(255, 193, 7, 0.05);
+}
+
+.status-error {
+    background-color: rgba(220, 53, 69, 0.05);
+}
+
+/* Summary dashboard styles */
+.summary-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.summary-stat-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.summary-stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.summary-stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+}
+
+.summary-stat-label {
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.metric-box {
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    margin-bottom: 10px;
+}
+
+.metric-box h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #007bff;
+}
+
+/* AI Recommendations styles */
+.ai-recommendation-item {
+    border-left: 4px solid #0dcaf0;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    background-color: rgba(13, 202, 240, 0.05);
+    border-radius: 0 8px 8px 0;
+}
+
+.ai-recommendation-item h6 {
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ai-recommendation-item p {
+    margin-bottom: 0.5rem;
+}
+
+.ai-implementation {
+    font-size: 0.875rem;
+    color: #6c757d;
+    padding-top: 0.5rem;
+    border-top: 1px dashed #dee2e6;
+}
+
+.ai-recommendation-priority-high {
+    border-left-color: #dc3545;
+}
+
+.ai-recommendation-priority-medium {
+    border-left-color: #ffc107;
+}
+
+.ai-recommendation-priority-low {
+    border-left-color: #0dcaf0;
+}
+
+.ai-model-info {
+    font-size: 0.75rem;
+    color: #6c757d;
+    text-align: right;
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+#aiModelSelect {
+    font-size: 0.875rem;
+    margin-bottom: 15px;
+}
+
+/* Notification styles */
+.notification-toast {
+    max-width: 350px;
+    margin-bottom: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    opacity: 0.95;
+    border-radius: 8px;
+    min-width: 280px;
+}
+
+.notification-toast:hover {
+    opacity: 1;
+}
+
+/* Export button styling */
+.export-btn {
+    float: right !important;
+}
+
+.export-btn .dropdown-item {
+    display: flex;
+    align-items: center;
+}
+
+.export-btn .dropdown-item i {
+    margin-right: 0.5rem;
+    width: 1rem;
+}
+
+
+
+
+
+.code-block{
+     max-height: 300px
+}
+
+#technicalContent .col-md-6.mb-3:first-child ,
+#technicalContent .col-md-6.mb-3:first-child .recommendation-item{   
+    width: 100%;
+    
+    padding-bottom: 20px;
+    
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    .step-item {
+        min-width: 100%;
+    }
+    
+    .summary-overview {
+        grid-template-columns: 1fr;
+    }
+    
+    .score-item {
+        margin-bottom: 15px;
+    }
+    
+    .metric-box {
+        margin-bottom: 20px;
+    }
+    
+    .score-gauge {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .score-value {
+        font-size: 20px;
+    }
+    
+    .ai-recommendation-item h6 {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .ai-recommendation-item h6 .badge {
+        margin-top: 5px;
+    }
+    
+    /* Fix sidebar display on mobile */
+    .sidebar {
+        position: static;
+        padding-top: 20px;
+    }
+    
+    .col-md-9.ms-sm-auto.col-lg-10.px-md-4 {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+
+/**
+ * new-components.css - Styles for new analysis components
+ * File path: css/new-components.css
+ */
+
+/* Core Web Vitals Styles */
+.performance-gauge {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.performance-score {
+    position: absolute;
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+}
+
+.vitals-gauge {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+}
+
+.metric-item {
+    margin-bottom: 1.2rem;
+}
+
+/* Schema Markup Analysis Styles */
+.schema-score {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.schema-types-list .badge {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.implementation-guide pre {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1rem;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Competitor Analysis Styles */
+.competitor-score {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.competitor-analysis-container .card-header {
+    font-weight: bold;
+}
+
+.competitor-analysis-container .list-group-item {
+    padding: 0.75rem 1rem;
+}
+
+#competitorsList {
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+/* Common Styles for Score Circles */
+.score-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.score-number {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* Score Circle Colors */
+.score-excellent {
+    background-color: rgba(40, 167, 69, 0.15);
+    border: 4px solid #28a745;
+    color: #28a745;
+}
+
+.score-good {
+    background-color: rgba(13, 110, 253, 0.15);
+    border: 4px solid #0d6efd;
+    color: #0d6efd;
+}
+
+.score-average {
+    background-color: rgba(255, 193, 7, 0.15);
+    border: 4px solid #ffc107;
+    color: #ffc107;
+}
+
+.score-poor {
+    background-color: rgba(220, 53, 69, 0.15);
+    border: 4px solid #dc3545;
+    color: #dc3545;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .score-circle {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .score-number {
+        font-size: 28px;
+    }
+    
+    .vitals-gauge {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .performance-gauge {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .performance-score {
+        font-size: 30px;
+    }
+}
+
+/* Always show all accordion content */
+.accordion-collapse {
+    display: block !important;
+}
+
+/* Remove accordion toggle buttons */
+.accordion-button::after {
+    display: none !important;
+}
+
+
+/* Make accordion-like sections always visible */
+.accordion-button::after {
+    display: none !important;
+}
+
+.accordion-button.collapsed {
+    background-color: #f8f9fa !important;
+}
+
+.accordion-button:focus {
+    box-shadow: none !important;
+}
+
+/* Section highlighting effect */
+@keyframes highlight-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(13, 110, 253, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(13, 110, 253, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(13, 110, 253, 0); }
+}
+
+.highlight-section {
+    animation: highlight-pulse 1.5s 1;
+    border: 1px solid rgba(13, 110, 253, 0.5);
+    border-radius: 8px;
+}
+
+/* Improve section headers */
+.accordion-header {
+    margin-bottom: 0.5rem;
+}
+
+.accordion-button {
+    background-color: #f8f9fa !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    padding: 1rem 1.5rem !important;
+    margin-bottom: 0.5rem !important;
+    box-shadow: none !important;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #f8f9fa !important;
+    color: #212529 !important;
+}
+
+/* Improve section content */
+.accordion-body {
+    padding: 1.5rem !important;
+    background-color: #ffffff !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important;
+    margin-top: 0.5rem !important;
+    border: 1px solid #eaeaea !important;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Better badge styling */
+.accordion-button .badge {
+    padding: 0.5rem 0.75rem !important;
+    font-weight: 600 !important;
+}
+
+/* Add visual indicator to step items */
+.step-item .step-text::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    transition: all 0.3s ease;
+}
+
+.step-item:hover .step-text::after {
+    content: " →";
+    width: auto;
+}
+
+/* Accordion item spacing */
+.accordion-item {
+    margin-bottom: 1.5rem !important;
+}
+
+/* Progress steps module styling */
+#progressSteps {
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+/* Enhanced Recommendation Styling */
+.recommendation-card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.recommendation-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+}
+
+.recommendation-card.implemented {
+    border-color: #28a745 !important;
+}
+
+.recommendation-card.implemented .category-indicator {
+    background-color: #28a745 !important;
+}
+
+.recommendation-card.in-progress {
+    border-color: #17a2b8 !important;
+}
+
+.recommendation-card.in-progress .category-indicator {
+    background-color: #17a2b8 !important;
+}
+
+/* Chart Comparison Styles */
+.comparison-toggle {
+    cursor: pointer;
+}
+
+.chart-type-switcher {
+    transition: all 0.2s ease;
+}
+
+.chart-type-switcher.active {
+    background-color: #0d6efd;
+    color: white;
+}
+
+/* Progress Tracking */
+.step-detailed-progress {
+    height: 5px;
+    margin-top: 5px;
+    transition: width 0.5s ease-in-out;
+}.step-item .step-text{
+    font-size: 12px
+}

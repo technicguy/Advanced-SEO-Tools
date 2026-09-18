@@ -1,0 +1,79 @@
+/* local-seo.css - Styles for local SEO analysis display */
+
+/* Main container */
+.local-seo-results {
+    margin-bottom: 2rem;
+}
+
+/* Gauge styling */
+.local-seo-gauge {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+.local-seo-gauge .score-value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Check items styling */
+.local-seo-check-item {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.local-seo-check-item i {
+    margin-right: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* Rating stars */
+.rating-stars {
+    letter-spacing: -2px;
+}
+
+/* Local citations */
+.citation-item {
+    padding: 1rem;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+    background-color: #f8f9fa;
+    transition: all 0.2s ease-in-out;
+}
+
+.citation-item:hover {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    transform: translateY(-2px);
+}
+
+/* NAP inconsistencies highlight */
+.nap-inconsistency {
+    background-color: #fff8dd;
+}
+
+/* Implementation guide styling */
+.implementation-guide {
+    background-color: #f8f9fa;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .local-seo-gauge {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .local-seo-gauge .score-value {
+        font-size: 1.5rem;
+    }
+}

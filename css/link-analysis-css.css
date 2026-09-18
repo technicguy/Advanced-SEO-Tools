@@ -1,0 +1,245 @@
+/**
+ * link-analysis.css - Styling for link analysis visualization
+ * File path: css/link-analysis.css
+ */
+
+/* Link visualization container */
+#linkVisualization {
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Score gauges */
+.score-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    position: relative;
+    border: 10px solid;
+}
+
+.score-circle::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+}
+
+.score-circle .score-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.score-excellent {
+    border-color: #28a745;
+    color: #28a745;
+    background-color: rgba(40, 167, 69, 0.1);
+}
+
+.score-good {
+    border-color: #17a2b8;
+    color: #17a2b8;
+    background-color: rgba(23, 162, 184, 0.1);
+}
+
+.score-average {
+    border-color: #ffc107;
+    color: #ffc107;
+    background-color: rgba(255, 193, 7, 0.1);
+}
+
+.score-poor {
+    border-color: #dc3545;
+    color: #dc3545;
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+/* Link list styling */
+.link-item {
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    margin-bottom: 0.5rem;
+    background-color: #f8f9fa;
+    border-left: 4px solid #007bff;
+}
+
+.broken-link-item {
+    border-left-color: #dc3545;
+    background-color: rgba(220, 53, 69, 0.05);
+}
+
+.external-link-item {
+    border-left-color: #fd7e14;
+    background-color: rgba(253, 126, 20, 0.05);
+}
+
+.nofollow-link-item {
+    border-left-color: #6f42c1;
+    background-color: rgba(111, 66, 193, 0.05);
+}
+
+.link-url {
+    word-break: break-all;
+    font-family: monospace;
+    font-size: 0.9rem;
+}
+
+.link-text {
+    font-style: italic;
+    color: #6c757d;
+}
+
+.link-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+}
+
+.link-meta .badge {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
+}
+
+/* Recommendations section */
+.recommendation-card {
+    margin-bottom: 1rem;
+    border-left: 4px solid;
+}
+
+.recommendation-high {
+    border-left-color: #dc3545;
+}
+
+.recommendation-medium {
+    border-left-color: #ffc107;
+}
+
+.recommendation-low {
+    border-left-color: #17a2b8;
+}
+
+/* Network visualization controls */
+.vis-network {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.network-controls {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.network-controls button {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #495057;
+}
+
+.network-controls button:hover {
+    background-color: #f8f9fa;
+}
+
+/* Anchor text analysis section */
+.anchor-text-tag {
+    display: inline-block;
+    font-size: 1rem;
+    padding: 0.25rem 0.5rem;
+    margin: 0.25rem;
+    border-radius: 0.25rem;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+}
+
+.anchor-text-tag-size-1 {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.anchor-text-tag-size-2 {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.anchor-text-tag-size-3 {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.anchor-text-tag-size-4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.anchor-text-tag-size-5 {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+/* Link distribution section */
+.link-distribution-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 0.25rem;
+    height: 100%;
+}
+
+.link-distribution-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 0.5rem;
+}
+
+.link-distribution-label {
+    text-align: center;
+    color: #6c757d;
+}
+
+.link-distribution-internal .link-distribution-number {
+    color: #007bff;
+}
+
+.link-distribution-external .link-distribution-number {
+    color: #fd7e14;
+}
+
+.link-distribution-nofollow .link-distribution-number {
+    color: #6f42c1;
+}
+
+.link-distribution-broken .link-distribution-number {
+    color: #dc3545;
+}
